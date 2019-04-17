@@ -1,0 +1,10 @@
+PROJECT(LEARN_CPP)
+
+INCLUDE_DIRECTORIES(../inc)
+
+SET(SRC_LIST day4.cc
+)
+
+ADD_EXECUTABLE(my_work ${SRC_LIST})
+
+

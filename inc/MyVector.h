@@ -1,3 +1,6 @@
+#ifndef MY_VECTOR_H
+#define MY_VECTOR_H
+
 #include<iostream>
 
 using namespace std;
@@ -5,7 +8,7 @@ using namespace std;
 class Vector
 {
     friend ostream& operator<<(ostream &out, const Vector &vec_obj);
-    friend istream& operator>>(istream &out, const Vector &vec_obj);
+    friend istream& operator>>(istream &in, Vector &vec_obj);
 public:
     Vector(int len);
     Vector(const Vector &vec_obj);
@@ -28,3 +31,9 @@ private:
 
 };
 
+ostream& operator<<(ostream &out, const Vector &vec_obj);
+
+istream& operator>>(istream &in, Vector &vec_obj);
+
+
+#endif

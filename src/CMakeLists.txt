@@ -2,7 +2,7 @@ PROJECT(LEARN_CPP)
 
 INCLUDE_DIRECTORIES(../inc)
 
-SET(SRC_LIST day4.cc Vector.cc
+SET(SRC_LIST day4.cc MyVector.cc MyString.cc
 )
 
 ADD_EXECUTABLE(my_work ${SRC_LIST})

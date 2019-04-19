@@ -1,4 +1,4 @@
-#include"Vector.h"
+#include"MyVector.h"
 #include<exception>
 #include<iostream>
 
@@ -62,8 +62,7 @@ Vector &  Vector::operator=(const Vector &vec_obj)
 int& Vector::operator[](int pos)
 {
     if(pos >= this->buf_len)
-        throw range_error("index out of range!");                                            ("index out-of range");
-    
+        throw range_error("index out of range!");
     return this->buf_p[pos];
 }
 
@@ -96,13 +95,23 @@ bool Vector::operator!=(const Vector &vec_obj)
     return !(*this == vec_obj);
 }
 
+ostream& operator<<(ostream &out, const Vector &vec_obj)
+{
+    for(int i = 0; i < vec_obj.buf_len; ++i)
+    {
+        out<<vec_obj.buf_p[i]<<' ';
+    }
+    return out;
+}
 
-
-
-
-
-
-
+istream& operator>>(istream &in, Vector &vec_obj)
+{
+    for(int i = 0; i < vec_obj.buf_len; ++i)
+    {
+        in>>vec_obj[i];
+    }
+    return in;
+}
 
 
 
